@@ -13,7 +13,7 @@
 		top: 0;
 		left: 0;
 		height: 4rem;
-		background: linear-gradient(var(--pure-white) 10.45%, var(--accent-color) 41.35%);
+		background: linear-gradient(var(--pure-white) 10.45%, var(--heading-color) 41.35%);
 		display: flex;
 		justify-content: center;
 		align-items: center;
