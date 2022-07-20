@@ -1,16 +1,24 @@
-<script lang="ts">
-	import type { Bunch } from './__types';
+<script lang="ts" context="module">
+	export type Bunch = Record<
+		'id' | 'title' | 'subtitle' | 'description' | 'imageUrl' | 'address' | 'email',
+		string | null
+	>;
+</script>
 
-	let dataList: Bunch[] = [
+<script lang="ts">
+	import BunchItem from '$lib/bunch/BunchItem.svelte';
+
+	let bunchList: Bunch[] = [
 		{
 			id: 'b1',
 			title: 'CSS Bootcamp',
 			subtitle: 'Learn CSS for the first time or brush up your CSS skills and dive in even deeper',
 			description:
 				'we start at the very basics and gradually dive in deeper and deeper. And we do this by showing both practical examples as well as the theory behind it.',
-			imageUrl: 'https://images.app.goo.gl/48BbgqePiL17aUW89',
+			imageUrl:
+				'https://web-dev.imgix.net/image/foR0vJZKULb5AGJExlazy1xYDgI2/N5mplhgLlq9qzABgyYKQ.png?auto=format&fit=max&w=1200&fm=auto',
 			address: 'Suite 104 Block 12 Apartment Pkns Jalan Au3/1 Ampang Ulu Wilayah Persekutuan',
-			email: 'learnCss.outlook.com'
+			email: 'webdev.outlook.com'
 		},
 		{
 			id: 'b2',
@@ -18,13 +26,19 @@
 			subtitle: 'Pour Art and Ccrylic Painting',
 			description:
 				'With some basic guidance and material provided, you can relieve your stress by learning to draft, sketch, and paint on an empty canvas. ',
-			imageUrl:
-				'https://images.says.com/uploads/story_source/source_image/810150/a9a4.jpg?_ga=2.90453722.1359893855.1658301175-382748050.1658301175',
+			imageUrl: 'https://i.ytimg.com/vi/dnI7lS63VRo/maxresdefault.jpg',
 			address: '111 Persiaran Cempaka Sari 3 Taman Cempaka',
 			email: 'yuroku.hotmail.com'
 		}
 	];
 </script>
 
-<h1>Welcome</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+{#each bunchList as bunchItem}
+	<BunchItem
+		title={bunchItem.title}
+		subtitle={bunchItem.subtitle}
+		imageUrl={bunchItem.imageUrl}
+		description={bunchItem.description}
+		email={bunchItem.email}
+	/>
+{/each}
