@@ -6,7 +6,7 @@
 </script>
 
 <script lang="ts">
-	import BunchItem from '$lib/bunch/BunchItem.svelte';
+	import BunchGrid from '$lib/bunch/BunchGrid.svelte';
 
 	let bunchList: Bunch[] = [
 		{
@@ -33,12 +33,4 @@
 	];
 </script>
 
-{#each bunchList as bunchItem}
-	<BunchItem
-		title={bunchItem.title}
-		subtitle={bunchItem.subtitle}
-		imageUrl={bunchItem.imageUrl}
-		description={bunchItem.description}
-		email={bunchItem.email}
-	/>
-{/each}
+<BunchGrid {bunchList} />

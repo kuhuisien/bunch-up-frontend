@@ -40,7 +40,7 @@
 
 	.image {
 		width: 100%;
-		height: 13.75rem;
+		height: 12.2rem;
 	}
 
 	.image img {
