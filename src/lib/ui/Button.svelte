@@ -1,13 +1,14 @@
 <script lang="ts">
 	export let href: string | undefined = undefined;
 	export let type = 'button';
-	export let mode: '' | 'success' | 'outline' = '';
+	export let mode: '' | 'outline' = '';
+	export let color: '' | 'success' = '';
 </script>
 
 {#if href}
 	<a {href}><slot /></a>
 {:else}
-	<button class={mode} {type} on:click><slot /></button>
+	<button class="{mode} {color}" {type} on:click><slot /></button>
 {/if}
 
 <style>

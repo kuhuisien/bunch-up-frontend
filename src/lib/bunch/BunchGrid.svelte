@@ -1,8 +1,8 @@
 <script lang="ts">
 	import BunchItem from '$lib/bunch/BunchItem.svelte';
-	import type { Bunch } from 'src/routes/index.svelte';
+	import type { PersonalBunch } from 'src/routes/index.svelte';
 
-	export let bunchList: Bunch[];
+	export let bunchList: PersonalBunch[];
 </script>
 
 <section>

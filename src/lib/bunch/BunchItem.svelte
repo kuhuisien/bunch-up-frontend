@@ -1,16 +1,21 @@
 <script lang="ts">
 	import Button from '$lib/ui/Button.svelte';
+	import Badge from '$lib/ui/Badge.svelte';
 
 	export let title: string | null;
 	export let subtitle: string | null;
 	export let imageUrl: string | null;
 	export let description: string | null;
 	export let email: string | null;
+	export let isFavourite: boolean;
 </script>
 
 <article>
 	<header>
-		<h1>{title}</h1>
+		<h1>
+			{title}
+			{#if isFavourite} <Badge>FAVOURITE</Badge>{/if}
+		</h1>
 		<h2>{subtitle}</h2>
 	</header>
 	<div class="image">
@@ -22,9 +27,11 @@
 	<footer>
 		<Button href="mailto:{email}">Contact</Button>
 
-		<Button mode="outline">Show Details</Button>
+		<Button mode="outline" color={isFavourite ? '' : 'success'}
+			>{isFavourite ? 'Unfavorite' : 'Favorite'}</Button
+		>
 
-		<Button>Favorite</Button>
+		<Button>Show Details</Button>
 	</footer>
 </article>
 
