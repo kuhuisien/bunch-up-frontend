@@ -70,7 +70,7 @@
 			on:input={onDescriptionChange}
 		/>
 
-		<Button type="submit" caption="Save" />
+		<Button type="submit">Save</Button>
 	</form>
 </main>
 

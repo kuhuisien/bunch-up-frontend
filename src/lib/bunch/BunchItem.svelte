@@ -20,11 +20,11 @@
 		<p>{description}</p>
 	</div>
 	<footer>
-		<Button href="mailto:{email}" caption="Contact" />
+		<Button href="mailto:{email}">Contact</Button>
 
-		<Button mode="outline" caption="Show Details" />
+		<Button mode="outline">Show Details</Button>
 
-		<Button caption="Favorite" />
+		<Button>Favorite</Button>
 	</footer>
 </article>
 
