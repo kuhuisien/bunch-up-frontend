@@ -20,7 +20,7 @@
 	}
 
 	function onSubtitleChange(event: Event): void {
-		title = (event.target as HTMLInputElement).value;
+		subtitle = (event.target as HTMLInputElement).value;
 	}
 
 	function onAddressChange(event: Event): void {
@@ -62,9 +62,9 @@
 </script>
 
 <main>
-	<Modal title="Add New Bunch" on:closemodal>
+	<Modal title="Add New Bunch" on:closemodal showDefaultFooter={false}>
 		<form on:submit|preventDefault={onSubmit}>
-			<Textfield id="title" label="Title" value={title} on:input={onTitleChange} />
+			<Textfield id="title" label="Title" value={title} on:input={onTitleChange} required />
 
 			<Textfield id="subtitle" label="Subtitle" value={subtitle} on:input={onSubtitleChange} />
 
@@ -81,17 +81,21 @@
 				value={description}
 				on:input={onDescriptionChange}
 			/>
-		</form>
 
-		<div slot="footer">
-			<Button type="submit" mode="outline" on:click={onCancel}>Cancel</Button>
-			<Button on:click={onSubmit}>Save</Button>
-		</div>
+			<div class="footer-button">
+				<Button mode="outline" on:click={onCancel}>Cancel</Button>
+				<Button type="submit">Save</Button>
+			</div>
+		</form>
 	</Modal>
 </main>
 
 <style>
 	form {
 		width: 100%;
+	}
+
+	.footer-button {
+		padding-top: 2rem;
 	}
 </style>

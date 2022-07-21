@@ -6,6 +6,7 @@
 	const dispatch = createEventDispatcher();
 
 	export let title: string;
+	export let showDefaultFooter = true;
 
 	const closeModal = () => {
 		dispatch('closemodal');
@@ -18,11 +19,13 @@
 
 	<div class="content"><slot /></div>
 
-	<footer>
-		<slot name="footer">
-			<Button on:click={closeModal}>Close</Button>
-		</slot>
-	</footer>
+	{#if showDefaultFooter}
+		<footer>
+			<slot name="footer">
+				<Button on:click={closeModal}>Close</Button>
+			</slot>
+		</footer>
+	{/if}
 </div>
 
 <style>
