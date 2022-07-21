@@ -23,6 +23,7 @@
 		cursor: pointer;
 		text-decoration: none;
 		margin-bottom: 0.1rem;
+		width: fit-content;
 	}
 
 	button:focus {

@@ -12,6 +12,7 @@
 <script lang="ts">
 	import BunchGrid from '$lib/bunch/BunchGrid.svelte';
 	import BunchForm from '$lib/bunch/BunchForm.svelte';
+	import Button from '$lib/ui/Button.svelte';
 
 	let bunchList: PersonalBunch[] = [
 		{
@@ -38,7 +39,25 @@
 			isFavourite: true
 		}
 	];
+
+	let formMode: '' | 'add' | 'edit' = '';
+
+	const resetFormMode = () => {
+		formMode = '';
+	};
 </script>
 
-<BunchForm />
+<div class="addnew">
+	<Button on:click={() => (formMode = 'add')}>Add New</Button>
+</div>
+
+{#if formMode}
+	<BunchForm on:closemodal={resetFormMode} on:cancel={resetFormMode} />
+{/if}
 <BunchGrid {bunchList} />
+
+<style>
+	.addnew {
+		margin: 1rem 1rem 0;
+	}
+</style>
