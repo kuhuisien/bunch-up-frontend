@@ -35,10 +35,6 @@
 		email = (event.target as HTMLInputElement).value;
 	}
 
-	function onDescriptionChange(event: Event): void {
-		description = (event.target as HTMLInputElement).value;
-	}
-
 	const onSubmit = () => {
 		const formData: Bunch = {
 			id: crypto.randomUUID(),
@@ -78,8 +74,7 @@
 				controlType="textarea"
 				id="description"
 				label="Description"
-				value={description}
-				on:input={onDescriptionChange}
+				bind:value={description}
 			/>
 
 			<div class="footer-button">

@@ -12,7 +12,7 @@
 	<label for={id}>{label}</label>
 
 	{#if controlType === 'textarea'}
-		<textarea {rows} {id} {value} {required} on:input />
+		<textarea {rows} {id} {required} bind:value />
 	{:else}
 		<input {type} {id} {value} {required} on:input />
 	{/if}
