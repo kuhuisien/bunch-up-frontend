@@ -7,13 +7,7 @@
 
 <section>
 	{#each bunchList as bunchItem}
-		<BunchItem
-			title={bunchItem.title}
-			subtitle={bunchItem.subtitle}
-			imageUrl={bunchItem.imageUrl}
-			description={bunchItem.description}
-			email={bunchItem.email}
-		/>
+		<BunchItem {...bunchItem} />
 	{/each}
 </section>
 
