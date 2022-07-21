@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Textfield from '$lib/ui/Textfield.svelte';
+	import Button from '$lib/ui/Button.svelte';
 	import type { Bunch } from 'src/routes/index.svelte';
 
 	let title = '';
@@ -69,7 +70,7 @@
 			on:input={onDescriptionChange}
 		/>
 
-		<button type="submit">Save</button>
+		<Button type="submit" caption="Save" />
 	</form>
 </main>
 
