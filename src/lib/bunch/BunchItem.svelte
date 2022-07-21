@@ -64,13 +64,6 @@
 		margin: 0.5rem 0;
 	}
 
-	h1.is-favorite {
-		background: #01a129;
-		color: white;
-		padding: 0 0.5rem;
-		border-radius: 5px;
-	}
-
 	p {
 		font-size: 1.25rem;
 		margin: 0;
