@@ -78,6 +78,6 @@
 	form {
 		width: 30rem;
 		max-width: 90%;
-		margin: auto;
+		margin: 1rem auto;
 	}
 </style>
