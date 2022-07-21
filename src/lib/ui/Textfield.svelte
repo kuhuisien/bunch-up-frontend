@@ -5,15 +5,16 @@
 	export let rows: number = 3;
 	export let value: string | undefined;
 	export let type: string = 'text';
+	export let required = true;
 </script>
 
 <div class="form-control">
 	<label for={id}>{label}</label>
 
 	{#if controlType === 'textarea'}
-		<textarea {rows} {id} {value} on:input />
+		<textarea {rows} {id} {value} {required} on:input />
 	{:else}
-		<input {type} {id} {value} on:input />
+		<input {type} {id} {value} {required} on:input />
 	{/if}
 </div>
 
