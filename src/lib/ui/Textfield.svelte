@@ -23,9 +23,8 @@
 	textarea {
 		display: block;
 		width: 100%;
-		font: inherit;
 		border: none;
-		border-bottom: 2px solid #ccc;
+		border-bottom: 2px solid var(--light-grey);
 		border-radius: 3px 3px 0 0;
 		background: var(--pure-white);
 		padding: 0.15rem 0.25rem;
