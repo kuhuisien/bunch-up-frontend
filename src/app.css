@@ -6,9 +6,15 @@
 	--primary-color: #b9c6d2;
 	--secondary-color: #d0dde9;
 	--tertiary-color: #edf0f8;
-	--accent-color: #ff3e00;
+	--accent-color: #cf0056;
+	--accent-light-color: #ffc7de;
+	--success-color: #01a129;
+	--success-bright-color: #1ac745;
+	--success-light-color: #c2ffd1;
 	--heading-color: rgba(0, 0, 0, 0.7);
 	--text-color: #444444;
+	--light-grey: #ccc;
+	--grey: #959595;
 }
 
 body {
@@ -26,15 +32,6 @@ p {
 
 p {
 	line-height: 1.5;
-}
-
-a {
-	color: var(--accent-color);
-	text-decoration: none;
-}
-
-a:hover {
-	text-decoration: underline;
 }
 
 h1 {
