@@ -7,6 +7,7 @@
 
 <script lang="ts">
 	import BunchGrid from '$lib/bunch/BunchGrid.svelte';
+	import BunchForm from '$lib/bunch/BunchForm.svelte';
 
 	let bunchList: Bunch[] = [
 		{
@@ -33,4 +34,5 @@
 	];
 </script>
 
+<BunchForm />
 <BunchGrid {bunchList} />
