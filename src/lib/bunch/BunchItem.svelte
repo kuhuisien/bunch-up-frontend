@@ -3,6 +3,7 @@
 
 	import Button from '$lib/ui/Button.svelte';
 	import Badge from '$lib/ui/Badge.svelte';
+	import { goto } from '$app/navigation';
 
 	export let id: string;
 	export let title: string | null;
@@ -16,6 +17,10 @@
 
 	const onToggleFav = () => {
 		dispatch('toggleFav', id);
+	};
+
+	const onShowDetailButtonClick = () => {
+		goto(`/bunch/${id}`);
 	};
 </script>
 
@@ -40,7 +45,7 @@
 			>{isFavourite ? 'Unfavorite' : 'Favorite'}</Button
 		>
 
-		<Button>Show Details</Button>
+		<Button on:click={onShowDetailButtonClick}>Show Details</Button>
 	</footer>
 </article>
 
