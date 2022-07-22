@@ -1,13 +1,13 @@
 <script lang="ts">
 	import BunchItem from '$lib/bunch/BunchItem.svelte';
-	import type { PersonalBunch } from 'src/routes/index.svelte';
+	import type { PersonalBunch } from '$lib/store/bunch-store';
 
 	export let bunchList: PersonalBunch[];
 </script>
 
 <section>
 	{#each bunchList as bunchItem}
-		<BunchItem {...bunchItem} />
+		<BunchItem {...bunchItem} on:toggleFav />
 	{/each}
 </section>
 

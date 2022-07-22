@@ -3,8 +3,9 @@
 
 	import Textfield from '$lib/ui/Textfield.svelte';
 	import Button from '$lib/ui/Button.svelte';
-	import type { Bunch } from 'src/routes/index.svelte';
+
 	import Modal from '$lib/ui/Modal.svelte';
+	import type { Bunch } from '$lib/store/bunch-store';
 
 	let title = '';
 	let subtitle = '';
@@ -37,7 +38,6 @@
 
 	const onSubmit = () => {
 		const formData: Bunch = {
-			id: crypto.randomUUID(),
 			title,
 			subtitle,
 			imageUrl,
@@ -46,10 +46,7 @@
 			description
 		};
 
-		// TO DO: create store and dispatch action
-		console.log(formData);
-
-		dispatch('closemodal');
+		dispatch('add', formData);
 	};
 
 	const onCancel = () => {

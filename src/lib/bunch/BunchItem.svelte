@@ -1,13 +1,22 @@
 <script lang="ts">
+	import { createEventDispatcher } from 'svelte';
+
 	import Button from '$lib/ui/Button.svelte';
 	import Badge from '$lib/ui/Badge.svelte';
 
+	export let id: string;
 	export let title: string | null;
 	export let subtitle: string | null;
 	export let imageUrl: string | null;
 	export let description: string | null;
 	export let email: string | null;
 	export let isFavourite: boolean;
+
+	const dispatch = createEventDispatcher();
+
+	const onToggleFav = () => {
+		dispatch('toggleFav', id);
+	};
 </script>
 
 <article>
@@ -27,7 +36,7 @@
 	<footer>
 		<Button href="mailto:{email}">Contact</Button>
 
-		<Button mode="outline" color={isFavourite ? '' : 'success'}
+		<Button mode="outline" color={isFavourite ? '' : 'success'} on:click={onToggleFav}
 			>{isFavourite ? 'Unfavorite' : 'Favorite'}</Button
 		>
 
