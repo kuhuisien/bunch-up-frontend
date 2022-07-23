@@ -16,7 +16,7 @@
 		padding: 4rem 0;
 		width: 100%;
 		max-width: 1024px;
-		margin: 0rem auto;
+		margin: 2rem auto;
 		box-sizing: border-box;
 	}
 </style>

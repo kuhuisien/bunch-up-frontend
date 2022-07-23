@@ -4,6 +4,7 @@
 	import bunchStore, { type PersonalBunch } from '$lib/store/bunch-store';
 	import { onDestroy } from 'svelte';
 	import { goto } from '$app/navigation';
+	import Empty from '$lib/layout/Empty.svelte';
 
 	let bunch: PersonalBunch | undefined;
 
@@ -44,13 +45,13 @@
 			<Button mode="outline" on:click={onBackButtonClick}>Back</Button>
 		</div>
 	{:else}
-		<div class="notfound">Not found</div>
+		<Empty />
 	{/if}
 </section>
 
 <style>
 	section {
-		margin: 4rem 0.5rem;
+		margin: 0 auto;
 	}
 
 	.image {
@@ -80,9 +81,5 @@
 
 	h4 {
 		margin-top: 3rem;
-	}
-
-	.notfound {
-		text-align: center;
 	}
 </style>
