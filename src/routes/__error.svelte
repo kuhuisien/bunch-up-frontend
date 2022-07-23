@@ -12,12 +12,14 @@
 <script lang="ts">
 	import ErrorScreen from '$lib/layout/ErrorScreen.svelte';
 	import NotFoundScreen from '$lib/layout/NotFoundScreen.svelte';
-	import Button from '$lib/ui/Button.svelte';
 
 	export let error: Error;
 	export let status: number;
 </script>
 
+<svelte:head>
+	<title>Error</title>
+</svelte:head>
 <div>
 	<h1 class="status">{status}</h1>
 
