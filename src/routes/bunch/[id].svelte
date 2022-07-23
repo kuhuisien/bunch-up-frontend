@@ -44,7 +44,7 @@
 			<Button mode="outline" on:click={onBackButtonClick}>Back</Button>
 		</div>
 	{:else}
-		<div>Not found</div>
+		<div class="notfound">Not found</div>
 	{/if}
 </section>
 
@@ -80,5 +80,9 @@
 
 	h4 {
 		margin-top: 3rem;
+	}
+
+	.notfound {
+		text-align: center;
 	}
 </style>
