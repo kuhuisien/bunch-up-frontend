@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { scale } from 'svelte/transition';
+	import { flip } from 'svelte/animate';
+
 	import BunchItem from '$lib/bunch/BunchItem.svelte';
 	import type { PersonalBunch } from '$lib/store/bunch-store';
 
@@ -6,8 +9,10 @@
 </script>
 
 <section>
-	{#each bunchList as bunchItem}
-		<BunchItem {...bunchItem} on:toggleFav />
+	{#each bunchList as bunchItem (bunchItem.id)}
+		<div transition:scale animate:flip={{ duration: 300 }}>
+			<BunchItem {...bunchItem} on:toggleFav />
+		</div>
 	{/each}
 </section>
 
