@@ -2,7 +2,7 @@
 	export function load({ error, status }: { error: Error; status: number }) {
 		return {
 			props: {
-				message: error.message,
+				error,
 				status
 			}
 		};
@@ -12,14 +12,30 @@
 <script lang="ts">
 	import ErrorScreen from '$lib/layout/ErrorScreen.svelte';
 	import NotFoundScreen from '$lib/layout/NotFoundScreen.svelte';
+	import Button from '$lib/ui/Button.svelte';
 
-	export let message: string;
+	export let error: Error;
 	export let status: number;
 </script>
 
-{#if status == 404}
-	<!-- Used '==' instead of '===' to match string/number status code (just to be sure) -->
-	<NotFoundScreen />
-{:else}
-	<ErrorScreen {message} {status} />
-{/if}
+<div>
+	<h1 class="status">{status}</h1>
+
+	{#if status === 404}
+		<NotFoundScreen />
+	{:else}
+		<ErrorScreen {error} />
+	{/if}
+</div>
+
+<style>
+	div {
+		margin-top: 2rem;
+		text-align: center;
+	}
+
+	.status {
+		font-size: 6rem;
+		margin-bottom: 0;
+	}
+</style>

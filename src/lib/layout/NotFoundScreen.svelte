@@ -3,7 +3,6 @@
 </script>
 
 <div>
-	<h1 class="status">404</h1>
 	<h1>Page Not Found</h1>
 
 	<p>We are sorry, the page you requested could not be found.</p>
@@ -12,17 +11,7 @@
 </div>
 
 <style>
-	div {
-		margin-top: 2rem;
-		text-align: center;
-	}
-
-	.status {
-		font-size: 6rem;
-		margin-bottom: 0;
-	}
-
 	p {
-		margin-bottom: 2rem;
+		margin-bottom: 3rem;
 	}
 </style>

@@ -1,12 +1,18 @@
 <script lang="ts">
-	export let message: string;
-	export let status: number;
+	import { dev } from '$app/env';
+
+	export let error: Error;
 </script>
 
-<h3>Status {status}: {message}</h3>
+<p>{error.message}</p>
+
+{#if dev && error.stack}
+	<pre>{error.stack}</pre>
+{/if}
 
 <style>
-	h3 {
-		margin: 1rem;
+	pre {
+		margin-top: 3rem;
+		text-align: left;
 	}
 </style>
