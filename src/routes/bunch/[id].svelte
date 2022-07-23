@@ -3,7 +3,7 @@
 	import Button from '$lib/ui/Button.svelte';
 	import bunchStore, { type PersonalBunch } from '$lib/store/bunch-store';
 	import { onDestroy } from 'svelte';
-	import { goto, afterNavigate } from '$app/navigation';
+	import { goto } from '$app/navigation';
 
 	let bunch: PersonalBunch | undefined;
 
@@ -18,9 +18,13 @@
 	});
 
 	const onBackButtonClick = () => {
-		goto('/', { replaceState: true });
+		goto('/');
 	};
 </script>
+
+<svelte:head>
+	<title>Bunch detail</title>
+</svelte:head>
 
 <section>
 	{#if bunch}

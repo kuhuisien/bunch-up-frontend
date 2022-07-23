@@ -23,6 +23,10 @@
 	};
 </script>
 
+<svelte:head>
+	<title>BunchUp</title>
+</svelte:head>
+
 <div class="addnew">
 	<Button on:click={() => (formMode = 'add')}>Add New</Button>
 </div>
