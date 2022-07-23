@@ -20,6 +20,7 @@
 <svelte:head>
 	<title>Error</title>
 </svelte:head>
+
 <div>
 	<h1 class="status">{status}</h1>
 

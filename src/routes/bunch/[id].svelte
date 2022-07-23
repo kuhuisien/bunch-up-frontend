@@ -1,22 +1,23 @@
+<script context="module" lang="ts">
+	import { MOCK_BUNCHES } from '$lib/mock';
+
+	export function load({ params }: { params: { id: string } }) {
+		const id = params.id;
+		return {
+			props: { fetchedBunch: MOCK_BUNCHES.find((i) => i.id === id) }
+		};
+	}
+</script>
+
 <script lang="ts">
-	import { page } from '$app/stores';
-	import Button from '$lib/ui/Button.svelte';
-	import bunchStore, { type PersonalBunch } from '$lib/store/bunch-store';
-	import { onDestroy } from 'svelte';
+	import type { PersonalBunch } from '$lib/store/bunch-store';
+
 	import { goto } from '$app/navigation';
+
+	import Button from '$lib/ui/Button.svelte';
 	import Empty from '$lib/layout/Empty.svelte';
 
-	let bunch: PersonalBunch | undefined;
-
-	const unsubscribe = bunchStore.subscribe((items) => {
-		const id = $page.params.id;
-
-		bunch = items.find((i) => i.id === id);
-	});
-
-	onDestroy(() => {
-		unsubscribe();
-	});
+	export let fetchedBunch: PersonalBunch | undefined;
 
 	const onBackButtonClick = () => {
 		goto('/');
@@ -28,20 +29,20 @@
 </svelte:head>
 
 <section>
-	{#if bunch}
+	{#if fetchedBunch}
 		<div class="image">
-			<img src={bunch.imageUrl} alt={bunch.title} />
+			<img src={fetchedBunch.imageUrl} alt={fetchedBunch.title} />
 		</div>
 
 		<div class="content">
-			<h1>{bunch.title}</h1>
-			<h3>{bunch.subtitle}</h3>
+			<h1>{fetchedBunch.title}</h1>
+			<h3>{fetchedBunch.subtitle}</h3>
 
-			<h3>{bunch.description}</h3>
+			<h3>{fetchedBunch.description}</h3>
 
-			<h4>Address: {bunch.address}</h4>
+			<h4>Address: {fetchedBunch.address}</h4>
 
-			<Button href="mailto:{bunch.email}">Contact</Button>
+			<Button href="mailto:{fetchedBunch.email}">Contact</Button>
 			<Button mode="outline" on:click={onBackButtonClick}>Back</Button>
 		</div>
 	{:else}

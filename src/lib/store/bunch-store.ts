@@ -47,6 +47,9 @@ const bunchStore = writable(MOCK_BUNCHES);
 
 const customBunchStore = {
 	subscribe: bunchStore.subscribe,
+	setBunches: (items: PersonalBunch[]) => {
+		bunchStore.set(items);
+	},
 	addBunch: (bunchData: Bunch) => {
 		const newBunch: PersonalBunch = { ...bunchData, id: crypto.randomUUID(), isFavourite: false };
 		bunchStore.update((bunches) => [newBunch, ...bunches]);
